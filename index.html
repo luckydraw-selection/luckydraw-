@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Draw </title>
+    <link rel="stylesheet" href="anime.css">
+	
+</head>
+<body>
+<div class="menu-container">
+  
+  <input type="checkbox" id="openmenu" class="hamburger-checkbox">
+  
+  <div class="hamburger-icon">
+ 
+    <label for="openmenu" id="hamburger-label">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>    
+  </div>
+
+    <div class="menu-pane" >
+        <table>
+<tr>
+<th><img src="Standard.png" alt="Indian Oil logo" style="width:200px; height:170px; margin-left:100px;"></th><br><br>
+<tr><th><p style = "font-size:20px; padding-left:20px; margin-top:50px; color:white; margin-left:120px;">Remove the winner name  <label class="switch-container"><input type="checkbox" checked><span class="slider"></span></label><br><br></label></p></th><t/tr>
+<tr><th><input style="padding-left:20px; margin-left:100px;" type="file" id="fileInput" accept=".txt, .csv"></th></tr>
+<tr><th><button id="fullscreen-button" style="margin-left:-5vw;">Fullscreen</button></th></tr>
+</table>
+</div>
+</div>
+    <div class="luckycontainer" style="margin-right:-20vw;">
+       <h1 style="color:yellow; text-shadow: 4px 2px 18px red, 0 0 8px ; font-size:50px;">LuckyDraw</h1>
+<img src="pictureframe.png" alt="Overlapping Image" class="overlapping-image" style="width:450px; height:200px;">
+<canvas id="confetti-canvas" class="confetti-canvas" style="width:50vw; height:30vw;"></canvas>
+    <div id="resultBox" class="result-box"></div><br><br>
+        <button onclick="readFileAndDraw()">Draw</button>
+        <!--<button onclick="openNewPage()">End Draw</button>-->
+        <div id="scrollingContainer" class="scrolling-container">
+            <div id="scrollingNames" class="scrolling-names"></div>
+	<div id="confetti-container"></div>
+        </div>
+        
+    </div>
+ <div  id ="displayBox" style="position:fixed; top: 0; right: 0; margin-top:10px; margin-right:">
+ <p style="font-size:20px; color:#AA336A;"><b>Winners List</b><br>
+   <textarea id="resultsTextarea" rows="10" cols="25" readonly></textarea></p>
+</div>
+<script>
+        const fullscreenButton = document.getElementById('fullscreen-button');
+
+        fullscreenButton.addEventListener('click', () => {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen(); // Full-screen for the entire page
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen(); // Firefox
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen(); // Chrome, Safari, and Opera
+            } else if (document.documentElement.msRequestFullscreen) {
+                document.documentElement.msRequestFullscreen(); // Internet Explorer
+            }
+        });
+    </script>
+
+    <script src="anime.js"></script>
+
+</body>
+</html>
+
+
+
